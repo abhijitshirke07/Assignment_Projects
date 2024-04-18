@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Profile </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="tpo-profile">
+    <h2>Training and Placement Officer</h2>
+    <img [src]="tpoDetails.profilePicture" alt="Profile Picture" class="profile-picture">
+    <div class="tpo-details">
+      <p><strong>Name:</strong> {{ tpoDetails.name }}</p>
+      <p><strong>Email:</strong> <a href="mailto:{{ tpoDetails.email }}">{{ tpoDetails.email }}</a></p>
+      <p><strong>Contact Number:</strong> <a href="tel:{{ tpoDetails.contactNumber }}">{{ tpoDetails.contactNumber }}</a></p>
+      <p><strong>Position:</strong> {{ tpoDetails.position }}</p>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Student Resumes</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchTerm" placeholder="Search by company name"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let student of filteredStudents" (click)="toggleExpand(student)">
+      <ion-card-header>
+        <ion-card-title>{{ student.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Branch:</strong> {{ student.branch }}</p>
+        <p><strong>UCID:</strong> {{ student.ucid }}</p>
+        <p><strong>Company Applied For:</strong> {{ student.companyAppliedFor }}</p>
+        <div *ngIf="student.isExpanded">
+          <p><strong>Resume:</strong></p>
+          <div *ngIf="student.resumeUrl">
+            <p><a [href]="student.resumeUrl" target="_blank">View Resume</a></p>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

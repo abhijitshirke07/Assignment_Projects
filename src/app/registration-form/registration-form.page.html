@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="gradient-text">Registration Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="text" name="name" [(ngModel)]="form.name" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" name="email" [(ngModel)]="form.email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contact</ion-label>
+        <ion-input type="tel" name="contact" [(ngModel)]="form.contact" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Roll No</ion-label>
+        <ion-input type="text" name="rollNo" [(ngModel)]="form.rollNo" required></ion-input>
+      </ion-item>
+
+      <ion-list-header>
+        <ion-label class="gradient-text">HSC Details</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label position="floating">College</ion-label>
+        <ion-input type="text" name="hscCollege" [(ngModel)]="form.hsc.college" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Year of Passing</ion-label>
+        <ion-input type="number" name="hscYear" [(ngModel)]="form.hsc.yearOfPassing" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Total Marks</ion-label>
+        <ion-input type="number" name="hscTotal" [(ngModel)]="form.hsc.total" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Out Of</ion-label>
+        <ion-input type="number" name="hscOutOf" [(ngModel)]="form.hsc.outOf" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Percentage</ion-label>
+        <ion-note slot="end">
+          <ng-container *ngIf="form.ssc.total !== null && form.ssc.outOf !== null">
+            <span class="gradient-text">{{ calculatePercentage(form.ssc.total, form.ssc.outOf) }}%</span>
+          </ng-container>
+        </ion-note>
+      </ion-item>
+
+      <ion-list-header>
+        <ion-label class="gradient-text">SSC Details</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label position="floating">College</ion-label>
+        <ion-input type="text" name="sscCollege" [(ngModel)]="form.ssc.college" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Year of Passing</ion-label>
+        <ion-input type="number" name="sscYear" [(ngModel)]="form.ssc.yearOfPassing" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Total Marks</ion-label>
+        <ion-input type="number" name="sscTotal" [(ngModel)]="form.ssc.total" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Out Of</ion-label>
+        <ion-input type="number" name="sscOutOf" [(ngModel)]="form.ssc.outOf" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Percentage</ion-label>
+        <ion-note slot="end">
+          <span class="gradient-text">{{ calculatePercentage(form.ssc.total, form.ssc.outOf) }}%</span>
+        </ion-note>
+      </ion-item>
+
+      <ion-list-header>
+        <ion-label class="gradient-text">Semester Marks</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let sem of semesters; let i = index">
+        <ion-label>Semester {{ i + 1 }}</ion-label>
+        <ion-item>
+          <ion-label position="floating">CGPA</ion-label>
+          <ion-input type="number" name="semCGPA{{ i }}" [(ngModel)]="form.semesterMarks[i].cgpa" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Percentage</ion-label>
+          <ion-input type="number" name="semPercentage{{ i }}" [(ngModel)]="form.semesterMarks[i].percentage" required></ion-input>
+        </ion-item>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Upload Resume</ion-label>
+        <ion-input type="file" (change)="onFileSelected($event)" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Additional Courses</ion-label>
+        <ion-textarea name="additionalCourses" [(ngModel)]="form.additionalCourses"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <ion-button type="submit" expand="block" [disabled]="!registrationForm.form.valid" class="gradient-button">
+      <span class="button-text">Submit</span>
+    </ion-button>
+  </form>
+</ion-content>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-button {
+    --background: linear-gradient(to right, #ff416c, #ff4b2b);
+    --color: white;
+  }
+
+  .button-text {
+    font-weight: bold;
+  }
+</style>
