@@ -1,0 +1,45 @@
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Guess the Animal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <div style="text-align: center;">
+      <!-- Random Image Box -->
+      <div class="image-box">
+        <img [src]="currentPair.image" alt="Random Image" class="animal-image" />
+      </div>
+
+      <!-- Text Box for Entering Guess -->
+      <ion-item>
+        <ion-label position="floating">Enter the name of the image:</ion-label>
+        <ion-input [(ngModel)]="userGuess" placeholder=""></ion-input>
+      </ion-item>
+
+      <!-- Button to Check the Guess -->
+      <ion-button expand="block" (click)="checkGuess()">Submit</ion-button>
+      
+      <!-- Feedback Text -->
+      <div *ngIf="feedbackMessage" class="feedback-message">
+        {{ feedbackMessage }}
+      </div>
+
+      <!-- Correct and Wrong Answer Count Box -->
+      <div class="answer-count-box">
+        <div class="count-box">
+          <!-- Correct Answer Count -->
+          <div class="correct-count">
+            <strong>Correct: </strong> {{ correctCount }}
+          </div>
+
+          <!-- Wrong Answer Count -->
+          <div class="wrong-count">
+            <strong>Wrong: </strong> {{ wrongCount }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+

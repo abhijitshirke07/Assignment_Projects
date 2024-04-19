@@ -1,0 +1,23 @@
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>A to Z</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <div class="grid-container">
+      <div *ngFor="let pair of pairsData" class="grid-item">
+        <div class="alphabet">{{ pair.letter }}</div>
+        <div class="image-box">
+          <img [src]="pair.image" alt="{{ pair.name }}" class="image" />
+        </div>
+        <div class="image-name">{{ pair.name }}</div>
+      </div>
+    </div>
+    <ion-button expand="block" (click)="redirectToGuessAnimal()" style="margin-top: 20px;">
+      Guess Animal Test
+    </ion-button>
+  </ion-content>
+
+  
+

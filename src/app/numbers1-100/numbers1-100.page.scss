@@ -1,0 +1,21 @@
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .grid-item {
+    border: 2px solid #4a90e2;
+    padding: 8px;
+    text-align: center;
+    background-color: #f2f2f2; 
+    border-radius: 8px
+  }
+  
+  .number-box .number,
+  .number-box .name {
+    margin: 4px 0;
+  }
+  

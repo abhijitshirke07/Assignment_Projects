@@ -1,0 +1,16 @@
+.answer-count-box {
+    margin-top: 20px;
+  }
+  
+  .count-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .correct-count, .wrong-count {
+    width: 48%;
+  }
+  

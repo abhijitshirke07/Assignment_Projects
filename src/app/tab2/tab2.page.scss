@@ -1,0 +1,16 @@
+ion-content.background-image {
+    background-image: url('https://png.pngtree.com/background/20210717/original/pngtree-cute-love-kids-learning-border-picture-image_1439082.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ion-card {
+    opacity: 0.9;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    /* Add border */
+    border: 2px solid #ccc; /* Adjust border width and color as needed */
+  }
+

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Guess the Number</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="text-align: center;">
+    <!-- Random Number Display -->
+    <div class="number-box">
+      <div class="current-number">
+        {{ currentNumber }}
+      </div>
+    </div>
+
+    <!-- Text Box for Entering Guess -->
+    <ion-item>
+      <ion-label position="floating">Enter the name of the number:</ion-label>
+      <ion-input [(ngModel)]="userGuess" placeholder=""></ion-input>
+    </ion-item>
+
+    <!-- Button to Check the Guess -->
+    <ion-button expand="block" (click)="checkGuess()">Submit</ion-button>
+    
+    <!-- Feedback Text -->
+    <div *ngIf="feedbackMessage" class="feedback-message">
+      {{ feedbackMessage }}
+    </div>
+
+    <!-- Correct and Wrong Answer Count Box -->
+    <div class="answer-count-box">
+      <!-- Correct Answer Count -->
+      <div class="correct-count">
+        <strong>Correct: </strong> {{ correctCount }}
+      </div>
+
+      <!-- Wrong Answer Count -->
+      <div class="wrong-count">
+        <strong>Wrong: </strong> {{ wrongCount }}
+      </div>
+    </div>
+  </div>
+</ion-content>

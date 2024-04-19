@@ -1,0 +1,32 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .alphabet {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .image-box {
+    margin-top: 10px;
+  }
+  
+  .image {
+    width: 100px;
+    height: 100px;
+    // border-radius: 50%;
+  }
+  
+  .image-name {
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,24 @@
+<!-- number1-100.page.html -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Numbers 1 to 100
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="grid-container">
+    <div *ngFor="let pair of pairsData" class="grid-item">
+      <div class="number-box">
+        <div class="number">{{ pair.number }}</div>
+        <div class="name">{{ pair.name }}</div>
+      </div>
+    </div>
+  </div>
+
+  <ion-button expand="block" (click)="redirectToGuessNumber()" style="margin-top: 20px;">
+    Guess Number Test
+  </ion-button>
+
+</ion-content>

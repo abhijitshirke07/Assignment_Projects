@@ -1,0 +1,33 @@
+/* Style for small circular profile images */
+.profile-image {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the entire circular area */
+    margin-right: 10px; /* Adjust spacing as needed */
+  }
+  
+  .highlight-my-rank {
+    background-color: yellow; /* Adjust color as needed */
+    font-weight: bold;
+  }
+  /* Styling for each ion-item in the list */
+ion-item {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+  }
+  
+
+  .rank {
+    margin-right: 10px; 
+  }
+  
+  .name {
+    flex-grow: 1; 
+  }
+  
+  .score {
+    text-align: right;
+  }
+  

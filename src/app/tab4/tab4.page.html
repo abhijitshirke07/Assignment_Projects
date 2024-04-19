@@ -1,0 +1,44 @@
+    <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div style="text-align: center;">
+      <!-- Profile Image -->
+      <img [src]="profileImage" alt="Profile Image" class="profile-image" />
+      
+      <!-- User Name -->
+      <h2>{{ userName }}</h2>
+      
+      <!-- Email -->
+      <p>{{ email }}</p>
+      
+      <!-- Achievements -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Achievements</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ achievements }}</p>
+        </ion-card-content>
+      </ion-card>
+      
+      <!-- Test Scores -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Test Scores</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p><strong>ABCD Test Score:</strong> {{ abcdTestScore }}</p>
+          <p><strong>Number Test Score:</strong> {{ numberTestScore }}</p>
+        </ion-card-content>
+      </ion-card>
+
+       <!-- Logout Button -->
+       <ion-button expand="full" color="danger" (click)="handleLogout()">
+        Logout
+      </ion-button>
+    </div>
+  </ion-content>
+ 
