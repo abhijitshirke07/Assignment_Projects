@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Calendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="page">
+    <div class="section">
+      <ion-card class="card-input">
+        <ion-card-content>
+          <ion-item>
+            <ion-label>Select Date</ion-label>
+            <ion-datetime display-format="DD MMM YYYY" picker-format="DD MMM YYYY" [(ngModel)]="selectedDate"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Event Title</ion-label>
+            <ion-input [(ngModel)]="eventTitle" placeholder="Enter event title"></ion-input>
+          </ion-item>
+          <ion-button expand="block" color="primary" (click)="addEvent()">Add Event</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div class="section">
+      <ion-card *ngFor="let event of events" class="event-card">
+        <ion-card-header>
+          <ion-card-title>{{ event.date | date:'mediumDate' }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ event.title }}</p>
+          <div class="button-group">
+            <ion-button color="primary" (click)="editEvent(event)">Edit</ion-button>
+            <ion-button color="danger" (click)="deleteEvent(event)">Delete</ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

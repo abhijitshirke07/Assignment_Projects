@@ -1,0 +1,31 @@
+.page {
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.card-input {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-input ion-item {
+  --border-color: transparent;
+}
+
+.event-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-group ion-button {
+  margin-left: 10px;
+}
