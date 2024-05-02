@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true" class="content">
+  <div class="header">
+    <div class="title">Feedbacks</div>
+  </div>
+  <ion-list>
+    <ion-card *ngFor="let feedback of feedbacks">
+      <ion-card-header>
+        <ion-card-subtitle>
+          <p><b>Course Difficulty:</b> {{ feedback.difficulty }}</p>
+          <p><b>Concepts Understood:</b> {{ feedback.questions_answered }}</p>
+          <p><b>Time Sufficiency:</b> {{ feedback.time_sufficiency }}</p>
+          <p><b>Suggestions:</b> {{ feedback.suggestions }}</p>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <!-- <ion-card-content>
+        <ion-card-title>Email: {{ feedback.uid }}</ion-card-title>
+      </ion-card-content> -->
+    </ion-card>
+  </ion-list>
+</ion-content>

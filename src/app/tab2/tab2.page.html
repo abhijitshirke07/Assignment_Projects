@@ -1,0 +1,27 @@
+<ion-content [fullscreen]="true" class="content">
+  <div class="header">
+    <div class="title">Course Survey Form</div>
+  </div>
+  <div class="feedback-main">
+    <div class="form">
+      <div class="form-title">Course Feedback</div>
+      <ion-item>
+        <ion-label position="floating">How was the difficulty of Course?</ion-label>
+        <ion-input type="text" [(ngModel)]="feedback.difficulty"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Were you able to understand concepts easily?</ion-label>
+        <ion-input type="text" [(ngModel)]="feedback.questions_answered"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">How would you describe Teaching methods used?</ion-label>
+        <ion-input type="text" [(ngModel)]="feedback.time_sufficiency"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Any suggestions for course updation?</ion-label>
+        <ion-input type="text" [(ngModel)]="feedback.suggestions"></ion-input>
+      </ion-item>
+      <ion-button class="submit-btn" expand="block" (click)="submitFeedback()">Submit</ion-button>
+    </div>
+  </div>
+</ion-content>

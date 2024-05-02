@@ -1,0 +1,49 @@
+.content {
+  --background: #f8f8f8;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  background-color: #6200ee;
+  color: #fff;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.info-main {
+  padding: 20px;
+}
+
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #6200ee;
+}
+
+.input-field {
+  --background: #f0f0f0;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.submit-btn {
+  --background: #ff6b6b;
+  --color: #fff;
+  --border-radius: 5px;
+  --box-shadow: none;
+  margin-top: 20px;
+}
